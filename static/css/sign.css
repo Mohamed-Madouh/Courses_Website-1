@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../images/bg1.jpg);
+
+}
+
+.sign-form {
+    padding: 10px;
+    border-radius: 50px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    width: 400px;
+
+}
+
+.signup-title {
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+
+
+.orwith-title {
+    font-size: 15px;
+    margin-top: 18px;
+}
+
+
+.input-box {
+    margin: 20px 0;
+    position: relative;
+}
+.input-box input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 12px 12px 12px 45px;
+    border-radius: 99px;
+    outline: 3px solid transparent;
+    transition: 0.3s;
+    font-size: 17px;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+}
+.input-box input::placeholder {
+    color: rgba(0, 0, 0, 0.39);
+    font-size: 16px;
+    font-weight: 500;
+}
+.input-box input:focus {
+    outline: 3px solid rgba(255, 255, 255, 0.3);
+}
+.input-box input::-ms-reveal {
+    filter: invert(100%);
+}
+
+
+.remember-forgot-box {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    font-size: 13px;
+    font-family: 'Arial Narrow Bold';
+}
+
+.login-btn {
+    width: 70%;
+    padding: 10px ;
+    background: #2F9CF4;
+    border: none;
+    border-radius: 99px;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+   
+}
+.login-btn:hover {
+    background: #0B87EC;               
+}
+
+
+
+.icon {
+    position: relative;
+    left: 30px;
+}

@@ -15,16 +15,14 @@ def generate_code():
     return code
 class profile(models.Model):
     user=models.OneToOneField(User,related_name= 'user_profile' , on_delete=models.CASCADE)
-    #image = models.ImageField(upload_to='users/')
+    image = models.ImageField(upload_to='users/')
     code =models.CharField(max_length=10, default=generate_code)
     code_used = models.BooleanField(default=False)
     active=models.BooleanField(default=False)
     def __str__(self) -> str:
         return str(self.user)
   
-@receiver(post_save,sender=User)  
- 
-  
+@receiver(post_save,sender=User)
 def crrate_profile(sender, instance ,created, **kwargs):
     if created:
         profile.objects.create(user=instance) 

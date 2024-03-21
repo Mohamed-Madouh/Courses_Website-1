@@ -1,0 +1,69 @@
+{% load  static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up Form</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'css/sign.css' %}">
+</head>
+<body>
+    
+    <form action="#" method ="post" class="sign-form">
+         
+
+        <h1 class="signup-title">SIGN UP NOW </h1>
+        {% csrf_token %}
+
+        <div class="input-box">
+            <input type="text" name="username"  placeholder="Carete a User Name">
+        </div>
+
+        <div class="input-box">
+            <input type="text" name="Date of Birth"  placeholder="Date of Birth">
+        </div>
+
+        <div class="input-box">
+            <input type="password" name="Password"  placeholder="Password">
+        </div>
+
+        <div class="input-box">
+            <input type="password" name="Password Again"  placeholder="Password Again">
+        </div>
+
+        <div class="input-box">
+            <input type="password" name="E-mail Address"  placeholder="Enter your E-mail Address">
+        </div>
+
+
+        <div class="input-box">
+            <input type="password" name="Phone Number"  placeholder="Enter your Phone Number">
+        </div>
+
+
+        <div class="remember-forgot-box">
+            <label for="remember">
+                <input type="checkbox" id="remember">
+                Agree on our term
+            </label>
+        </div>
+
+        <button class="login-btn">SIGN UP </button>
+
+        <div class="footer">
+            <h3>OR Continue With</h3>
+            <div class="icon">
+            <span class="w"><img src="{% static 'images/f.png' %}" alt=""></span>
+            <span class="w"><img src="{% static 'images/g.png' %}" alt=""></span>
+            <span class="e"><img src="{% static 'images/git.png' %}" alt=""></span>
+            <span class="r"><img src="{% static 'images/lin.png' %}" alt=""></span> 
+             
+        </div>
+
+    </form>
+    <div class="user-form-remind">
+        <p>Already Have An Account?<a href="{%url 'login' %}">register here</a></p> <!-- This paragraph and link are for users who already have an account to sign in -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+{% extends "auth_base.html" %}
+{% load static%}
+{% block bady %}
+{% load  %}
+    <header class="hd">
+       <ul>
+        <li>sign up</li>
+        <li>help</li>
+        <li>conect us</li>
+        <li>about us</li>
+        
+       </ul>
+    </header>
+    <div class="head1">
+        <h2>
+            WELCOME BACK
+        </h2>
+        <P>Dont Have On Account? <span class="mm"><a href="#">Sign Up</a>
+        </span></P>
+        {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+        {% endif %}
+
+        {% if next %}
+            {% if user.is_authenticated %}
+            <p>Your account doesn't have access to this page. To proceed,
+            please login with an account that has access.</p>
+            {% else %}
+            <p>Please login to see this page.</p>
+            {% endif %}
+        {% endif %}
+    <form class="user-form" method="post">
+        {% csrf_token %}
+        <div class="shadow">
+            <table>
+            
+                <tr>
+                    <td>{{ form.username.label_tag }}</td>
+                    <td>{{ form.username }}</td>
+                </tr>
+
+                <tr>
+                    <td>{{ form.password.label_tag }}</td>
+                    <td>{{ form.password }}</td>
+                </tr>
+            
+            </table>
+        
+        <input class="ch" type="checkbox"><span class="op">rememmber</span>
+        <br> 
+        <span class="fo">Forgt password?<a href="{% url 'password_reset' %}">reset here</a></span>
+        <br>
+
+        <button>
+            login
+        </button>
+
+        </div>
+        <div class="footer">
+            <h3>Login With</h3>
+            <div class="icon">
+            <span class="w"><img src="{% static 'images/f.png' %}" alt=""></span>
+            <span class="w"><img src="{% static 'images/g.png' %}" alt=""></span>
+            <span class="e"><img src="{% static 'images/git.png' %}" alt=""></span>
+            <span class="r"><img src="{% static 'images/lin.png' %}" alt=""></span> 
+             
+            </div>
+        </div>
+
+    </div>
+    <footer class="f">
+        <img src="{% static 'images/POINT1.jpg' %}" alt="" class="fg">
+    </footer>
+{% endblock bady %}  
+    
+    
+{% comment %} 
+{% url "signup" %} {% endcomment %}

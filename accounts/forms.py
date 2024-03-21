@@ -6,20 +6,7 @@ class Signupform(UserChangeForm,UserCreationForm):
     
     class Mete:
         model = User
-        fields =['username','email','passward1','password']
-
-
-
-
-
-
-
-
-class UserActivateform(forms.Form):
-    code= forms.CharField(max_length=8)
-    
-    
-    
+        fields =['username','email','passward1','password','phone','bith']      
 class UpdateUserForm(forms.ModelForm):
     username = forms.CharField(max_length=100,required=True,widget=forms.TextInput(attrs={'class': 'form-control'}))
     email = forms.EmailField(required=True,widget=forms.TextInput(attrs={'class': 'form-control'}))
@@ -36,3 +23,8 @@ class UpdateProfileForm(forms.ModelForm):
     class Meta:
         model = profile
         fields = ['avatar', 'bio']
+        
+class signupform(UserChangeForm,UserCreationForm):
+    class  Meta:
+        models = User
+        fields = ['usernamer','date of birth','password1','password2','email','namber']
